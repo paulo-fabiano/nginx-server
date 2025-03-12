@@ -1,0 +1,45 @@
+networks:
+  cvnet:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
+
+services:
+  nginx:
+    image: nginx:latest
+    networks:
+      cvnet:
+        ipv4_address: 172.20.0.100
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+    depends_on:
+      - vendas
+      - juridico
+
+  vendas:
+    build: 
+      context: ./vendas
+      dockerfile: Dockerfile.Vendas
+    networks:
+      cvnet:
+        ipv4_address: 172.20.0.120
+    ports:
+      - "3001:3001"
+    command: node server.js
+    restart: on-failure
+
+  juridico:
+    build: 
+      context: ./juridico
+      dockerfile: Dockerfile.Juridico
+    networks:
+      cvnet:
+        ipv4_address: 172.20.0.130
+    ports: 
+      - "3002:3002"
+    command: node server.js
+    restart: on-failure 
