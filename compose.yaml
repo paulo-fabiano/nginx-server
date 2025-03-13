@@ -1,5 +1,5 @@
 networks:
-  cvnet:
+  paulonet:
     ipam:
       driver: default
       config:
@@ -9,7 +9,7 @@ services:
   nginx:
     image: nginx:latest
     networks:
-      cvnet:
+      paulonet:
         ipv4_address: 172.20.0.100
     ports:
       - "80:80"
@@ -25,11 +25,8 @@ services:
       context: ./vendas
       dockerfile: Dockerfile.Vendas
     networks:
-      cvnet:
+      paulonet:
         ipv4_address: 172.20.0.120
-    ports:
-      - "3001:3001"
-    command: node server.js
     restart: on-failure
 
   juridico:
@@ -37,9 +34,6 @@ services:
       context: ./juridico
       dockerfile: Dockerfile.Juridico
     networks:
-      cvnet:
+      paulonet:
         ipv4_address: 172.20.0.130
-    ports: 
-      - "3002:3002"
-    command: node server.js
     restart: on-failure 
