@@ -112,13 +112,13 @@ Com os containers todos UPs, é hora de fazer o teste.
 
 ### vendas.paulo.com
 
-Coloque a URL `vendas.paulo.com` no navegador e você verá que a página retornada contém o título: *Bem-vindo ao setor de Vendas*
+Coloque a URL `vendas.paulo.com` no navegador e você verá que a página retornada contém o título: **Bem-vindo ao setor de Vendas**
 
 ![alt text](/images/image-1.png)
 
 ### juridico.paulo.com
 
-Coloque agora a URL `juridico.paulo.com` no navegador e você verá que a página retornada contém o título: *Bem-vindo ao setor Jurídico*
+Coloque agora a URL `juridico.paulo.com` no navegador e você verá que a página retornada contém o título: **Bem-vindo ao setor Jurídico**
 
 ![alt text](/images/image-2.png)
 
