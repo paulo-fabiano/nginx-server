@@ -81,13 +81,13 @@ Após fazer a configuração do seu DNS local, e hora de colocar a mão na massa
 1. Faça um clone do repositório:
 
 ```bash
-
+https://github.com/paulo-fabiano/nginx-server.git
 ```
 
 2. Acesse o repositório:
 
 ```bash
-
+cd nginx-server
 ```
 
 3. Use o comando:
